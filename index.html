@@ -3,48 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--for mobile device display-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_common.css">
+    <link rel="stylesheet" href="css/style_main.css">
+    <script src="js/img_manager.js"></script>
     <title>Backham Gallery</title>
 
 </head>
 <body>
+
     <header><!--semantic tag: header, main, section... etc.-->
         <h1 style="text-decoration: underline; font-style: italic">Welcome to Beckham's Gallery</h1>
     </header>
 
-<!--    <nav>-->
-<!--        <ul>-->
-<!--            <li><a href="#">사진첩1</a></li>-->
-<!--            <li><a href="#">사진첩2</a></li>            -->
-<!--        </ul>-->
-<!--    </nav>-->
+    <nav>
+        <ul>
+            <li><a href="#">about</a></li>
+            <li><a href="#">feature</a></li>
+            <li><a href="#">portfolio</a></li>
+            <li><a href="#">contact</a></li>
+        </ul>
+    </nav>
 
     <main> <!-- <body>의 주요 컨텐츠 영역 -->
-        <article>
-            <section class="main-area">
-                <h2>메인 페이지 영역</h2>
-            </section>
+        <section class="main-area">
+            <h2 style="font-size: 2rem">메인 페이지 영역</h2>
+        </section>
 
-        </article>
+        <section class="gallery-area">
+            <h2 style="font-size: 2rem">갤러리 영역</h2>
+            <div class="gallery-items"></div>
 
-        <article>
-            <section class="gallery-area">
-                <h2>갤러리 영역</h2>
-                <div class="gallery-items">
-                    <div class="item">이미지1</div>
-                    <div class="item">이미지2</div>
-                    <div class="item">이미지3</div>
-                </div>
-            </section>
-        </article>
-
+        </section>
     </main>
 
-
     <footer>
-        <p>©Copyright 2025 by tetsuya. All rights reversed.</p>
+        <p style="font-size: 2rem">©Copyright 2025 by tetsuya. All rights reversed.</p>
     </footer>
-
 
 </body>
 </html>
