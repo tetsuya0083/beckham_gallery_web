@@ -1,6 +1,6 @@
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
@@ -9,14 +9,13 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;/*장식이 없는*/
     text-align: center;
 }
 
 header {
-    display: block;
-    margin-top: 50px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 h1 {
@@ -27,36 +26,33 @@ h1 {
 }
 
 nav {
-    height: 20px;
+    /*border: 3px solid red;*/
     /*background-color: burlywood;*/
-    display: flex;
-    margin-bottom: 10px;
+    /*text-align: right;*/
+    margin-bottom: 20px;
 }
 
 nav ul {
-    display: flex;
-    flex: 2;
+    /*border: 3px solid blue;*/
+    /*background-color: green;*/
     list-style-type: circle; /* 불릿이나 숫자를 없앤다. */
-    padding: 0;
 }
 
 nav li {
     display: inline;
     text-align: center;
-    flex: 1;
+    padding: 10px;
+    margin: 35px;
 }
 
 nav a {
-    display: inline;/*inline-block*/
     font-size: 1.5rem;
     text-transform: uppercase;/*대문자로*/
     text-decoration: none;
-    color: black;
 }
 
 footer {
     background-color: #343a40;
     color: white;
     padding: 10px;
-    margin-top: 20px;
 }

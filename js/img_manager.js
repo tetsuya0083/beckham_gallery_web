@@ -1,4 +1,4 @@
-const strImgData = {
+const imgData = {
     "image1": "img/001.jpg",
     "image2": "img/001.jpg",
     "image3": "img/001.jpg",
@@ -15,8 +15,8 @@ const strImgData = {
 function loadImages() {
     const gallery = document.querySelector(".gallery-items");
 
-    const arrAlt = Object.keys(strImgData);
-    const arrSrc = Object.values(strImgData);
+    const arrAlt = Object.keys(imgData);
+    const arrSrc = Object.values(imgData);
     const size = arrAlt.length;
 
     for (let i = 0; i < size; i++)
@@ -36,11 +36,11 @@ function loadImages() {
     }
 }
 
-// LoadImage()의 for문을 for..of문으로
+// LoadImage()의 for문을 for...of문으로 개선
 function loadImagesNew() {
     const gallery = document.querySelector(".gallery-items"); // 갤러리 컨테이너 가져오기
 
-    for (const [key, value] of Object.entries(strImgData)) {
+    for (const [key, value] of Object.entries(imgData)) {
         const imgDiv = document.createElement("div"); // div 생성
         const img = document.createElement("img"); // img 태그 생성
         img.alt = key;
@@ -54,3 +54,4 @@ function loadImagesNew() {
 }
 
 window.onload = loadImagesNew;
+
