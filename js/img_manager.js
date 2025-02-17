@@ -12,6 +12,8 @@ const imgData = {
     "image11": "img/001.jpg",
 };
 
+window.onload = loadImagesNew;
+
 function loadImages() {
     const gallery = document.querySelector(".gallery-items");
 
@@ -53,5 +55,18 @@ function loadImagesNew() {
     }
 }
 
-window.onload = loadImagesNew;
+document.addEventListener("DOMContentLoaded", function () {
+    const galleryArea = document.querySelector(".gallery-area"); // 갤러리 영역
+    const progressBar = document.createElement("div"); // 프로그레스 바 요소 생성
+    progressBar.classList.add("progress-bar");
+    galleryArea.appendChild(progressBar);
+
+    galleryArea.addEventListener("scroll", function () {
+        const scrollTop = galleryArea.scrollTop; // 현재 스크롤 위치
+        const scrollHeight = galleryArea.scrollHeight - galleryArea.clientHeight; // 전체 스크롤 가능한 높이
+        const scrollPercent = (scrollTop / scrollHeight) * 100; // 스크롤 진행률 계산
+
+        progressBar.style.width = scrollPercent + "%"; // 프로그레스 바 업데이트
+    });
+});
 
