@@ -12,7 +12,22 @@ const imgData = {
     "image11": "img/001.jpg",
 };
 
-window.onload = loadImagesNew;
+const arrImgData = [
+    {id:1, img:"img/001.jpg", alt:"image1"},
+    {id:2, img:"img/001.jpg", alt:"image2"},
+    {id:3, img:"img/001.jpg", alt:"image3"},
+    {id:4, img:"img/001.jpg", alt:"image4"},
+    {id:5, img:"img/001.jpg", alt:"image5"},
+    {id:6, img:"img/001.jpg", alt:"image6"},
+    {id:7, img:"img/001.jpg", alt:"image7"},
+    {id:8, img:"img/001.jpg", alt:"image8"},
+    {id:9, img:"img/001.jpg", alt:"image9"},
+    {id:10, img:"img/001.jpg", alt:"image10"},
+    {id:11, img:"img/001.jpg", alt:"image11"},
+];
+
+
+// window.onload = loadImagesNew;
 
 function loadImages() {
     const gallery = document.querySelector(".gallery-items");
