@@ -12,64 +12,132 @@ const imgData = {
     "image11": "img/001.jpg",
 };
 
-const arrImgData = [
-    {id:1, img:"img/001.jpg", alt:"image1"},
-    {id:2, img:"img/001.jpg", alt:"image2"},
-    {id:3, img:"img/001.jpg", alt:"image3"},
-    {id:4, img:"img/001.jpg", alt:"image4"},
-    {id:5, img:"img/001.jpg", alt:"image5"},
-    {id:6, img:"img/001.jpg", alt:"image6"},
-    {id:7, img:"img/001.jpg", alt:"image7"},
-    {id:8, img:"img/001.jpg", alt:"image8"},
-    {id:9, img:"img/001.jpg", alt:"image9"},
-    {id:10, img:"img/001.jpg", alt:"image10"},
-    {id:11, img:"img/001.jpg", alt:"image11"},
-];
+// const arrImgData = [
+//     {id:1, img:"img/001.jpg", alt:"image1"},
+//     {id:2, img:"img/001.jpg", alt:"image2"},
+//     {id:3, img:"img/001.jpg", alt:"image3"},
+//     {id:4, img:"img/001.jpg", alt:"image4"},
+//     {id:5, img:"img/001.jpg", alt:"image5"},
+//     {id:6, img:"img/001.jpg", alt:"image6"},
+//     {id:7, img:"img/001.jpg", alt:"image7"},
+//     {id:8, img:"img/001.jpg", alt:"image8"},
+//     {id:9, img:"img/001.jpg", alt:"image9"},
+//     {id:10, img:"img/001.jpg", alt:"image10"},
+//     {id:11, img:"img/001.jpg", alt:"image11"},
+// ];
 
 
-// window.onload = loadImagesNew;
+window.onload = loadImagesNew;
 
-function loadImages() {
-    const gallery = document.querySelector(".gallery-items");
-
-    const arrAlt = Object.keys(imgData);
-    const arrSrc = Object.values(imgData);
-    const size = arrAlt.length;
-
-    for (let i = 0; i < size; i++)
-    {
-        const alt = arrAlt[i];
-        const src = arrSrc[i];
-
-        const imgDiv = document.createElement("div"); // div tag
-        const img = document.createElement("img"); // img tag
-        img.alt = alt;
-        img.src = src;
-        img.title = alt;
-        img.classList.add("item");
-
-        imgDiv.appendChild(img);//아래에서 위로 올라가면서 append한다.
-        gallery.appendChild(imgDiv);
-    }
-}
+// function loadImages() {
+//     const gallery = document.querySelector(".gallery-items");
+//
+//     const arrAlt = Object.keys(imgData);
+//     const arrSrc = Object.values(imgData);
+//
+//
+//     for (let i = 0; i < arrAlt.length; i++)
+//     {
+//         const alt = arrAlt[i];
+//         const src = arrSrc[i];
+//
+//         const thumbnailDiv = document.createElement("div");
+//         const thumbnailImg = document.createElement("img");
+//         const popupDiv = document.createElement("div");
+//         const closeBtn = document.createElement("span");
+//         const popupImg = document.createElement("img");
+//
+//         thumbnailImg.alt = alt;
+//         thumbnailImg.src = src;
+//         thumbnailImg.title = alt;
+//         thumbnailImg.classList.add("item");
+//         popupImg.alt = alt;
+//         popupImg.src = src;
+//         popupImg.title = alt;
+//         popupImg.classList.add("popup-content");
+//         closeBtn.classList.add("close");
+//         closeBtn.textContent = "X";
+//
+//         popupDiv.classList.add("popup");
+//         popupDiv.appendChild(closeBtn);
+//         popupDiv.appendChild(popupImg);
+//
+//         // 썸네일 클릭 시 팝업 띄우기
+//         thumbnailImg.addEventListener("click", function () {
+//             popupDiv.style.display = "flex";
+//         });
+//
+//         // 닫기 버튼 클릭 시 팝업 닫기
+//         closeBtn.addEventListener("click", function () {
+//             popupDiv.style.display = "none";
+//         });
+//
+//         // 팝업 영역 클릭 시 닫기 (이미지 제외)
+//         popupDiv.addEventListener("click", function (event) {
+//             if (event.target === popupDiv) {
+//                 popupDiv.style.display = "none";
+//             }
+//         });
+//
+//         thumbnailDiv.appendChild(thumbnailImg);
+//         thumbnailDiv.appendChild(popupDiv);
+//         gallery.appendChild(thumbnailDiv);
+//     }
+// }
 
 // LoadImage()의 for문을 for...of문으로 개선
 function loadImagesNew() {
     const gallery = document.querySelector(".gallery-items"); // 갤러리 컨테이너 가져오기
 
     for (const [key, value] of Object.entries(imgData)) {
-        const imgDiv = document.createElement("div"); // div 생성
-        const img = document.createElement("img"); // img 태그 생성
-        img.alt = key;
-        img.src = value;
-        img.title = key;
-        img.classList.add("item");
+        const alt = key;
+        const src = value;
 
-        imgDiv.appendChild(img);
-        gallery.appendChild(imgDiv);
+        const thumbnailDiv = document.createElement("div");
+        const thumbnailImg = document.createElement("img");
+        const popupDiv = document.createElement("div");
+        const closeBtn = document.createElement("span");
+        const popupImg = document.createElement("img");
+
+        thumbnailImg.alt = alt;
+        thumbnailImg.src = src;
+        thumbnailImg.title = alt;
+        thumbnailImg.classList.add("item");
+        popupImg.alt = alt;
+        popupImg.src = src;
+        popupImg.title = alt;
+        popupImg.classList.add("popup-content");
+        closeBtn.classList.add("close");
+        closeBtn.textContent = "X";
+
+        popupDiv.classList.add("popup");
+        popupDiv.appendChild(closeBtn);
+        popupDiv.appendChild(popupImg);
+
+        // 썸네일 클릭 시 팝업 띄우기
+        thumbnailImg.addEventListener("click", function () {
+            popupDiv.style.display = "flex";
+        });
+
+        // 닫기 버튼 클릭 시 팝업 닫기
+        closeBtn.addEventListener("click", function () {
+            popupDiv.style.display = "none";
+        });
+
+        // 팝업 영역 클릭 시 닫기 (이미지 제외)
+        popupDiv.addEventListener("click", function (event) {
+            if (event.target === popupDiv) {
+                popupDiv.style.display = "none";
+            }
+        });
+
+        thumbnailDiv.appendChild(thumbnailImg);
+        thumbnailDiv.appendChild(popupDiv);
+        gallery.appendChild(thumbnailDiv);
     }
 }
 
+// progress bar
 document.addEventListener("DOMContentLoaded", function () {
     const galleryArea = document.querySelector(".gallery-area"); // 갤러리 영역
     const progressBar = document.createElement("div"); // 프로그레스 바 요소 생성
@@ -84,4 +152,3 @@ document.addEventListener("DOMContentLoaded", function () {
         progressBar.style.width = scrollPercent + "%"; // 프로그레스 바 업데이트
     });
 });
-

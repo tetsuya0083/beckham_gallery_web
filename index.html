@@ -34,39 +34,7 @@
             </h2>
         </section>
         <section class="gallery-area">
-            <div class="gallery-items">
-                <div>
-                    <!--원본 이미지-->
-                    <img id="item" class="item" alt="image01" src="img/001.jpg" title="image01">
-                    <div id="popup" class="popup">
-                        <span class="close" id="close">&times;</span>
-                        <img src="img/001.jpg" class="popup-content" id="popup-img">
-                        <script>
-                            // 요소 가져오기
-                            const item = document.getElementById("item");
-                            const popup = document.getElementById("popup");
-                            const closeBtn = document.getElementById("close");
-
-                            // 이미지 클릭 시 팝업 표시
-                            item.addEventListener("click", function () {
-                                popup.style.display = "flex";
-                            });
-
-                            // 닫기 버튼 클릭 시 팝업 닫기
-                            closeBtn.addEventListener("click", function () {
-                                popup.style.display = "none";
-                            });
-
-                            // 팝업 영역 클릭 시 닫기 (이미지 제외)
-                            popup.addEventListener("click", function (event) {
-                                if (event.target === popup) {
-                                    popup.style.display = "none";
-                                }
-                            });
-                        </script>
-                    </div>
-                </div>
-            </div>
+            <div class="gallery-items"></div>
         </section>
     </main>
 
