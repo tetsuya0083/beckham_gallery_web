@@ -1,29 +1,19 @@
 const imgData = {
     "image1": "img/001.jpg",
-    "image2": "img/001.jpg",
-    "image3": "img/001.jpg",
-    "image4": "img/001.jpg",
-    "image5": "img/001.jpg",
-    "image6": "img/001.jpg",
-    "image7": "img/001.jpg",
-    "image8": "img/001.jpg",
-    "image9": "img/001.jpg",
-    "image10": "img/001.jpg",
-    "image11": "img/001.jpg",
+    "image2": "img/002.jpg",
+    "image3": "img/003.jpg",
+    "image4": "img/004.jpg",
+    "image5": "img/005.jpg",
+    "image6": "img/006.jpg",
+    "image7": "img/007.jpg",
+    "image8": "img/008.jpg",
+    "image9": "img/009.jpg",
 };
 
 // const arrImgData = [
 //     {id:1, img:"img/001.jpg", alt:"image1"},
 //     {id:2, img:"img/001.jpg", alt:"image2"},
 //     {id:3, img:"img/001.jpg", alt:"image3"},
-//     {id:4, img:"img/001.jpg", alt:"image4"},
-//     {id:5, img:"img/001.jpg", alt:"image5"},
-//     {id:6, img:"img/001.jpg", alt:"image6"},
-//     {id:7, img:"img/001.jpg", alt:"image7"},
-//     {id:8, img:"img/001.jpg", alt:"image8"},
-//     {id:9, img:"img/001.jpg", alt:"image9"},
-//     {id:10, img:"img/001.jpg", alt:"image10"},
-//     {id:11, img:"img/001.jpg", alt:"image11"},
 // ];
 
 
